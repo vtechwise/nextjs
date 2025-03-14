@@ -1,6 +1,6 @@
 import React from "react";
 import "./globals.css";
-import Navbar from "./components/Navbar";
+import Navbar from "../components/Navbar";
 
 export default function RootLayout({
   children,
@@ -10,8 +10,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navbar/>
-        {children}
+        <Navbar />
+        <main className="max-w-3xl mx-auto py-10 px-6">{children}</main>
       </body>
     </html>
   );
