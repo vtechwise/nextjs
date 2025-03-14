@@ -1,5 +1,6 @@
 import React from "react";
 import "./globals.css";
+import Navbar from "./components/Navbar";
 
 export default function RootLayout({
   children,
@@ -9,7 +10,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <nav>this is the nav bar</nav>
+        <Navbar/>
         {children}
       </body>
     </html>
