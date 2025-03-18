@@ -11,6 +11,9 @@ type User = {
 };
 
 export const createUser = async (formData: FormData) => {
+    await new Promise((resolve) => {
+      setTimeout(resolve, 3000);
+    });
   const firstName = formData.get("firstName") as string;
   const lastName = formData.get("lastName") as string;
 
@@ -22,7 +25,7 @@ export const createUser = async (formData: FormData) => {
   };
     await saveUser(newUser);
     revalidatePath('/actions')
-    redirect('/')
+    // redirect('/')
 };
 
 export const fetchUsers = async (): Promise<User[]> => {
