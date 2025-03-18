@@ -18,6 +18,7 @@ export const createUser = async (formData: FormData) => {
     firstName,
     id: Date.now().toString(),
   };
+  await saveUser(newUser);
 };
 
 export const fetchUsers = async (): Promise<User[]> => {
@@ -26,8 +27,8 @@ export const fetchUsers = async (): Promise<User[]> => {
   return users;
 };
 
-const saveUser = async (user:User) => {
-    const users = await fetchUsers()
-    users.push(user)
-    await writeFile('users.json', JSON.stringify(user))
-}
+const saveUser = async (user: User) => {
+  const users = await fetchUsers();
+  users.push(user);
+  await writeFile("users.json", JSON.stringify(user));
+};
