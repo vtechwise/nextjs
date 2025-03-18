@@ -1,6 +1,6 @@
 "use server";
 
-import { readFile } from "fs/promises";
+import { readFile, writeFile } from "fs/promises";
 
 type User = {
   id: string;
@@ -25,3 +25,9 @@ export const fetchUsers = async (): Promise<User[]> => {
   const users = result ? JSON.parse(result) : [];
   return users;
 };
+
+const saveUser = async (user:User) => {
+    const users = await fetchUsers()
+    users.push(user)
+    await writeFile('users.json', JSON.stringify(user))
+}
