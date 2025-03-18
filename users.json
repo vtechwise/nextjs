@@ -1,1 +1,5 @@
-{"lastName":"smith","firstName":"peter","id":"1742280759038"}
+[
+  { "lastName": "smith", "firstName": "peter", "id": "1742281226133" },
+  { "lastName": "smith", "firstName": "peter", "id": "1742281230490" },
+  { "lastName": "oalmide", "firstName": "olabisi", "id": "1742281240575" }
+]
